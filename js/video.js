@@ -35,13 +35,13 @@ document.querySelector("#slider").addEventListener("click", function() {
 });
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Slow Down")
-	video.playbackRate *=.9;
+	video.playbackRate *=.95;
 	console.log(video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Go Faster")
-	video.playbackRate *=.9; //fix, use divison
+	video.playbackRate *=.95; //fix, use divison
 	console.log(video.playbackRate)
 });
 document.querySelector("#skip").addEventListener("click", function() {
@@ -56,7 +56,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 		video.muted = false;
 	}
 	else {
-		this.innerHTML = "Unmuted";
+		this.innerHTML = "unmute";
 		video.muted = true;
 	}
 });
