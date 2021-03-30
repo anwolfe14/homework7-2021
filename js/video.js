@@ -41,13 +41,18 @@ document.querySelector("#slower").addEventListener("click", function() {
 
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Go Faster")
-	video.playbackRate *=.95; //fix, use divison
+	video.playbackRate /=.95; //fix, use divison
 	console.log(video.playbackRate)
 });
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead")
-	video.playbackRate +=15; //fix, use divison
+	if(video.currentTime < video.duration - 15) {
+	video.currentTime +=15; //fix, use divison
 	console.log(video.playbackRate)
+	}
+	else {
+		video.currentTime = 0;
+	}
 });
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Muting")
